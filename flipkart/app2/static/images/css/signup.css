@@ -1,0 +1,34 @@
+.center{
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding-top:30px;
+  padding-left: 30px;
+  height:500px;
+}
+
+.head{
+padding-bottom:25px;
+text-align:center;
+font-family: "Times New Roman", Times, serif;
+font-size:60px;
+}
+.fom{
+font-family: "Times New Roman", Times, serif;
+}
+.bu{
+background-color: #4CAF50;
+border:none;
+margin-top:50px;
+margin-left:40%;
+width:100px;
+height:40px;
+border-radius:5px;
+font-family: "Times New Roman", Times, serif;
+
+
+}
+
+.bu:hover{
+background-color: #3cb371;
+}

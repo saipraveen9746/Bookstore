@@ -1,0 +1,46 @@
+.loginn{
+border:3px solid green;
+width:500px;
+height:250px;
+margin-left:500px;
+margin-top:200px;
+padding-top:90px;
+padding-left:200px;
+padding-bottom:100px;
+
+
+}
+
+.fom{
+font-size:20px;
+
+}
+
+button{
+background-color: #4CAF50;
+margin-left:100px;
+border-radius:4px;
+height:30px;
+font-size:20px;
+font-weight: bold;
+}
+button:hover{
+background-color: #3cb371;
+color:white;
+
+}
+
+input{
+width:200px;
+height:30px;
+font-size:20px;
+}
+
+h3{
+font-size:30px;
+padding-left:80px;
+}
+.cana:hover{
+color:red;
+}
+

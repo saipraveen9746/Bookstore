@@ -1,0 +1,54 @@
+{% extends 'home.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'images/css/malayalam.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+<div class="container">
+    <div class="row">
+        {% if object_list %}
+        <h1 style="text-align:center;padding-top:10px;">HERE IS YOUR SEARCH RESULTS</h1>
+        {% for each in object_list %}
+
+            <div style="text-decoration:none;" class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch mb-4">
+                <div class="card">
+                    <a href="{% url 'deta' each.id %}"><img src="{{ each.image_url }}" class="card-img-top" alt="{{ each.Book_name }}" style="height:320px;width:240px;"></a>
+                    <div class="card-body">
+                       <a style="text-decoration:none;" href="{% url 'deta' each.id %}"> <h5 class="card-title">{{ each.Book_name }}</h5></a>
+                        <p class="card-text">Author: {{ each.Author }}</p>
+                        <p class="card-text">Price: {{ each.Price }}</p>
+                        {% if each.Book_availability %}
+                            <a class="btn btn-primary" href="{% url 'checkout' each.id %}" role="button">Order</a>
+                        {% else %}
+                            <button class="btn btn-primary" disabled>Out of stock</button>
+                        {% endif %}
+                    </div>
+                </div>
+
+            </div>
+        {% endfor %}
+      {%else%}
+        <h1><img style="padding-top:130px;padding-bottom:130px;width:400px;"  src="{% static 'images\magnifying-glass.png'%}">Nothing found</h1>
+      {%endif%}
+    </div>
+</div>
+
+</body>
+</html>
+
+{% endblock content %}
+
